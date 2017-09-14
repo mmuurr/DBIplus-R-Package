@@ -1,0 +1,10 @@
+Package: DBIplus
+Title: DBI Add-Ons (i.e. DBI+)
+Version: 0.0.0.9000
+Authors@R: person("Murat", "Tasan", email = "mmuurr@gmail.com", role = c("aut", "cre"))
+Description: Some add-on utilites for DBI.
+Depends: R (>= 3), methods
+Imports: DBI
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
