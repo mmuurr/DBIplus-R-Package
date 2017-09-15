@@ -1,10 +1,11 @@
 Package: DBIplus
 Title: DBI Add-Ons (i.e. DBI+)
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: person("Murat", "Tasan", email = "mmuurr@gmail.com", role = c("aut", "cre"))
 Description: Some add-on utilites for DBI.
-Depends: R (>= 3), methods
-Imports: DBI
+Depends: R (>= 3.0.0), methods
+Imports: DBI, zzz, futile.logger, readr
+Suggests: tibble
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
