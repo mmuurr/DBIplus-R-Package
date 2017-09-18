@@ -47,7 +47,6 @@ dbenv_add_conn <- function(dbenv, ...) {
     checkmate::assertEnvironment(dbenv)
 
     l <- list(...)
-
     checkmate::assertList(l,
                           types = "DBIConnection",
                           any.missing = FALSE,
@@ -57,6 +56,7 @@ dbenv_add_conn <- function(dbenv, ...) {
     stopifnot(all(purrr::map_int(l, length) == 1))
 
     purrr::walk2(names(l), l, assign, pos = dbenv)
+    
     return(dbenv)  ## not really needed since dbenv has reference semantics.
 }
 
