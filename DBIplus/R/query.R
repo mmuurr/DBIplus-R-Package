@@ -1,5 +1,5 @@
 dbGetQuery <- function(dbconn, statement, ..., .as_tibble = TRUE) {
-    flog.debug("in dbGetQuery, list(...) =\n%s", zzz::sstr(list(...)))
+    if(length(list(...)) > 0) flog.debug("in dbGetQuery, list(...) =\n%s", zzz::sstr(list(...)))
     RV <- DBI::dbGetQuery(dbconn, statement, ...)
 
     if(is.data.frame(RV) &&
@@ -8,6 +8,7 @@ dbGetQuery <- function(dbconn, statement, ..., .as_tibble = TRUE) {
         RV <- tibble::as_tibble(RV)
     }
 
+    flog.debug(zzz::sstr(RV, .name = "returned table"))
     return(RV)
 }
 
